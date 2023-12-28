@@ -2,7 +2,7 @@
 function setup() {
     createCanvas(2000,2000); // make an HTML canvas element width x height pixels
     // stroke('#443a38');
-    strokeWeight(1);
+    // strokeWeight(1);
     noFill();
 }
 
@@ -11,7 +11,12 @@ function draw() {
     let hr = hour();
     let min = minute();
     let sec = second();
-
+    
+    if(sessionStorage.getItem("current_min") !== null && sessionStorage.getItem("current_min") != min){
+      console.log(min);
+    }
+    sessionStorage.setItem("current_min", min);
+    
     background(225);
     // textSize(32);
     // fill(180);
